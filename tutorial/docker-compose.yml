@@ -1,0 +1,14 @@
+version: '2'
+services:
+
+  cassandra:
+    image: cassandra
+
+  jupyter:
+    build: jupyter
+    command: start.sh jupyter lab
+    volumes:
+      - ./notebooks:/home/jovyan/notebooks
+    ports:
+      - 8888:8888
+      - 5000:5000
